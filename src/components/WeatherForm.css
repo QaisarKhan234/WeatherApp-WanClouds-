@@ -1,0 +1,65 @@
+/* WeatherForm.css */
+.weather-form {
+    padding: 20px;
+    margin-bottom: 80px;
+  }
+  
+  .weather-form-card {
+    background: #444;
+    color: #fff;
+  }
+  
+  .weather-data-card {
+    margin-top: 20px;
+    background: #444;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .weather-data-section {
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .weather-data-icon {
+    margin-right: 8px;
+    font-size: 52px;
+  }
+  
+  .weather-data-icon1 {
+    margin-right: 8px;
+    font-size: 20px;
+  }
+  .weather-data-text {
+    margin: 0;
+    font-size: 30px;
+  }
+
+  .weather-data-text1 {
+    margin: 0;
+    font-size: 15px;
+  }
+  
+  .weather-search-button {
+    width: 100%;
+    background-color: #555;
+    border-color: #ccc;
+    transition: background 0.3s ease;
+    color: white;
+  }
+  
+  .weather-search-button:hover {
+    
+    border-color: #ccc;
+}
+
+.alert{
+  position: absolute;
+  top: 74px;
+  right: 0;
+  z-index: 999;
+  width: 300px;
+}
+ 

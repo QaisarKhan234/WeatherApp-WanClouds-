@@ -1,0 +1,39 @@
+
+
+
+/* App.css */
+/* .main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.weather-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+} */
+
+/* Adjust this gap according to your design */
+
+
+
+
+
+.content{
+  padding: 0 24px 24px;
+  margin-top: 64px;
+  overflow-y: auto;
+  margin-bottom: 70px !important;
+}
+
+
+
+
+
+
+

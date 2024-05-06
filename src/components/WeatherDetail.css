@@ -1,0 +1,90 @@
+.card{
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    margin-bottom: 80px;
+}
+.location {
+    font-weight: bold;
+    animation: slideInFromLeft 0.8s ease-in-out;
+  }
+  
+  .temp {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-top: -70px !important;
+    animation: slideInFromLeft 0.5s ease-in-out;
+  }
+  
+  .description {
+    font-weight: 500;
+    animation: fadeUp 1.5s ease-in-out;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow-y: auto;
+  }
+  
+  .top {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    animation: slideInFromLeft 0.5s ease-in-out;
+  }
+  
+  .bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    animation: fadeUp 1.5s ease-in-out;
+  }
+  
+  .bold {
+    font-weight: 600;
+  }
+  
+  .lightertext {
+    font-weight: 300;
+    margin-right: 10px;
+    width: 40px;
+    animation: slideInFromLeft 0.5s ease-in-out;
+  }
+  
+  .back-button {
+    margin-top: 10px;
+    color: white;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    animation: slideInFromLeft 0.9s ease-in-out;
+  }
+  
+  /* Text animation */
+  @keyframes slideInFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-90%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
