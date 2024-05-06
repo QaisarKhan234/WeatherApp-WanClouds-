@@ -7,15 +7,13 @@ import {
 } from '@ant-design/icons';
 import fetchWeatherData from './WeatherServices';
 import './WeatherForm.css';
-import {
-  NotificationManager,
-} from 'react-notifications';
+import { NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
+
 const WeatherForm = ({ allowedCities }) => {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
-
 
   const handleSearch = async (event) => {
     try {
@@ -25,9 +23,13 @@ const WeatherForm = ({ allowedCities }) => {
         return;
       }
 
-      // Check if the searched city is one of the allowed cities
-      if (!allowedCities.includes(city)) {
-        setWeatherData(null); // Reset weatherData if city not found in allowedCities
+      const lowercaseCity = city.toLowerCase();
+      const lowercaseAllowedCities = allowedCities.map((city) =>
+        city.toLowerCase()
+      );
+
+      if (!lowercaseAllowedCities.includes(lowercaseCity)) {
+        setWeatherData(null);
         NotificationManager.warning(
           'Weather not available for this city',
           'Success',
@@ -37,7 +39,7 @@ const WeatherForm = ({ allowedCities }) => {
       }
 
       setLoading(true);
-    
+
       const data = await fetchWeatherData(city);
       setWeatherData(data);
       setLoading(false);
@@ -57,14 +59,11 @@ const WeatherForm = ({ allowedCities }) => {
     }
   };
 
-
-
   const getWeatherIcon = () => {
     if (!weatherData) {
       return <CloudOutlined className="weather-data-icon" />;
     }
 
-    // Determine weather condition and return corresponding icon
     if (weatherData.description === 'Clear') {
       return <CloudOutlined className="weather-data-icon" />;
     } else if (weatherData.description === 'Clouds') {
@@ -106,7 +105,7 @@ const WeatherForm = ({ allowedCities }) => {
           </Col>
         </Row>
       </Card>
-      {weatherData ? (
+      {weatherData && (
         <Card
           title={<span style={{ color: '#fff' }}>{city}</span>}
           className="weather-data-card"
@@ -136,16 +135,6 @@ const WeatherForm = ({ allowedCities }) => {
               </p>
             </div>
           </div>
-        </Card> 
-      ) : (
-        <Card
-          title={<span style={{ color: '#fff' }}>Not Available</span>}
-          className="weather-data-card"
-          headStyle={{ background: 'transparent', borderBottom: 0 }}
-        >
-          <p style={{ color: '#fff' }}>
-            Weather data not available for this city.
-          </p>
         </Card>
       )}
     </div>

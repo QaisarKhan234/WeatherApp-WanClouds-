@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { Layout, Breadcrumb } from 'antd';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -18,14 +16,12 @@ const App = () => {
     <Router>
       <Layout style={{ minHeight: '100vh' }}>
         <AppHeader />
-        
+
         <Layout style={{ marginTop: '64px' }}>
           <AppSider />
-          
-          <Layout style={{marginLeft: '220px', marginRight: '20px'}}>
-            <Content
-              className='content'
-            >
+
+          <Layout style={{ marginLeft: '220px', marginRight: '20px' }}>
+            <Content className="content">
               <Breadcrumb
                 style={{
                   margin: '20px 6px',
@@ -42,7 +38,7 @@ const App = () => {
             </Content>
           </Layout>
         </Layout>
-        <NotificationContainer/>
+        <NotificationContainer />
         <AppFooter />
       </Layout>
     </Router>
@@ -53,16 +49,23 @@ const cities = ['Islamabad', 'Karachi', 'Lahore', 'Peshawar', 'kalam'];
 
 const Home = () => {
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' , marginBottom: '80px'}}>
+    <div
+      style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: '20px',
+        marginBottom: '80px',
+      }}
+    >
       {cities.map((city, index) => (
-        <WeatherCard key={index} city={city}/>
+        <WeatherCard key={index} city={city} />
       ))}
     </div>
   );
 };
 
 const Search = () => {
-  return <WeatherForm allowedCities={cities}/>;
+  return <WeatherForm allowedCities={cities} />;
 };
 
 export default App;
