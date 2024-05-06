@@ -27,11 +27,11 @@ const WeatherCard = ({ city }) => {
     if (!weatherData) {
       return <LoadingOutlined className="weather-card-icon" />;
     } else if (weatherData.temperature > 30) {
-      return <CloudOutlined className="weather-card-icon" />;
+      return <FireOutlined className="weather-card-icon" />;
     } else if (weatherData.temperature < 10) {
       return <ThunderboltOutlined className="weather-card-icon" />;
     } else {
-      return <FireOutlined className="weather-card-icon" />;
+      return <CloudOutlined className="weather-card-icon" />;
     }
   };
 
