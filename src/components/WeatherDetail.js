@@ -21,17 +21,13 @@ const WeatherDetail = () => {
 
   const getWeatherIcon = () => {
     if (!weatherData) {
-      return <LoadingOutlined />;
+      return <LoadingOutlined className="weather-card-icon" />;
+    } else if (weatherData.temperature > 30) {
+      return <CloudOutlined className="weather-card-icon" />;
+    } else if (weatherData.temperature < 10) {
+      return <ThunderboltOutlined className="weather-card-icon" />;
     } else {
-      // Determine weather condition based on temperature
-      if (weatherData.temperature > 30) {
-        return <FireOutlined style={{ fontSize: '72px' }} />;
-      } else if (weatherData.temperature < 10) {
-        return <ThunderboltOutlined style={{ fontSize: '72px' }} />;
-      } else {
-        // Default icon if temperature is between 10 and 30
-        return <CloudOutlined style={{ fontSize: '72px' }} />;
-      }
+      return <FireOutlined className="weather-card-icon" />;
     }
   };
 
