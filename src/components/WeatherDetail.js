@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Button, Card } from 'antd';
 import fetchWeatherData from './WeatherServices';
 import './WeatherDetail.css';
-import { CloudOutlined, LoadingOutlined } from '@ant-design/icons';
+import { CloudOutlined, LoadingOutlined, ThunderboltOutlined, FireOutlined } from '@ant-design/icons'; // Import additional icons if needed
 
 const WeatherDetail = () => {
   const { city } = useParams();
@@ -18,6 +18,22 @@ const WeatherDetail = () => {
     };
     fetchData();
   }, [city]);
+
+  const getWeatherIcon = () => {
+    if (!weatherData) {
+      return <LoadingOutlined />;
+    } else {
+      // Determine weather condition based on temperature
+      if (weatherData.temperature > 30) {
+        return <FireOutlined style={{ fontSize: '72px' }} />;
+      } else if (weatherData.temperature < 10) {
+        return <ThunderboltOutlined style={{ fontSize: '72px' }} />;
+      } else {
+        // Default icon if temperature is between 10 and 30
+        return <CloudOutlined style={{ fontSize: '72px' }} />;
+      }
+    }
+  };
 
   return (
     <div>
@@ -57,7 +73,7 @@ const WeatherDetail = () => {
                 <div className="description">
                   <p>{weatherData.description}</p>
                   <div>
-                    <CloudOutlined style={{ fontSize: '72px' }} />
+                    {getWeatherIcon()}
                   </div>
                 </div>
               </div>
