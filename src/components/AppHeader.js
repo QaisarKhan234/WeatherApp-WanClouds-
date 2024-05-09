@@ -7,15 +7,13 @@ const { Header } = Layout;
 const AppHeader = () => {
   const [selectHeaderKey, setSelectHeaderKey] = useState('home')
   return (
-    <Header className="header" style={{borderBottom:'1px solid #ccc'}}>
-      <div className="logo" />
+    <Header className="header">
       <Menu
         theme="dark"
         mode="horizontal"
         selectedKeys={[selectHeaderKey]}
         onSelect={({ key }) => setSelectHeaderKey(key)}
         className="header-menu"
-        style={{borderBottom:'1px solid #ccc'}}
       >
         <Menu.Item
           key="home"

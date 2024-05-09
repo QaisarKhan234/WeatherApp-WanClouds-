@@ -8,27 +8,22 @@ import AppHeader from './components/AppHeader';
 import AppSider from './components/AppSider';
 import AppFooter from './components/AppFooter';
 import { NotificationContainer } from 'react-notifications';
-
+import './App.css';
 const { Content } = Layout;
 
 const App = () => {
   return (
     <Router>
-      <Layout style={{ minHeight: '100vh' }}>
+      <Layout>
         <AppHeader />
-
-        <Layout style={{ marginTop: '64px' }}>
+        <Layout className="layout">
           <AppSider />
 
-          <Layout style={{ marginLeft: '220px', marginRight: '20px' }}>
+          <Layout className="contentLayout">
             <Content className="content">
-              <Breadcrumb
-                style={{
-                  margin: '20px 6px',
-                }}
-              >
+              <Breadcrumb className="breadCrump">
                 <Breadcrumb.Item>Home</Breadcrumb.Item>
-                <Breadcrumb.Item>App</Breadcrumb.Item>
+                <Breadcrumb.Item>Weather App</Breadcrumb.Item>
               </Breadcrumb>
               <Routes>
                 <Route exact path="/" element={<Home />} />
@@ -49,14 +44,7 @@ const cities = ['Islamabad', 'Karachi', 'Lahore', 'Peshawar', 'kalam'];
 
 const Home = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '20px',
-        marginBottom: '80px',
-      }}
-    >
+    <div className="home">
       {cities.map((city, index) => (
         <WeatherCard key={index} city={city} />
       ))}

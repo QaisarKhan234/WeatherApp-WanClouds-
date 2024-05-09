@@ -1,8 +1,25 @@
 .content{
   padding: 0 24px 24px;
+  margin-bottom: 70px;
+}
+
+.breadCrump {
+  margin: 20px 6px;
+}
+
+.contentLayout{
+  margin-left: 220px;
+}
+
+.layout{
   margin-top: 64px;
-  overflow-y: auto;
-  margin-bottom: 70px !important;
+  /* margin-bottom: 59px; */
+}
+
+.home {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 

@@ -17,7 +17,6 @@ const WeatherCard = ({ city }) => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchWeatherData(city);
-      console.log(data);
       setWeatherData(data);
     };
     fetchData();
@@ -40,12 +39,12 @@ const WeatherCard = ({ city }) => {
       <Card
         hoverable
         className="weather-card"
-        headStyle={{ background: 'transparent', borderBottom: 0 }}
-        bodyStyle={{
-          padding: '16px',
-          color: '#fff',
-          display: 'flex',
-          flexDirection: 'column',
+        styles={{
+          header: { background: 'transparent', borderBottom: 0 },
+          body: {
+            padding: '16px',
+            color: '#fff',
+          },
         }}
       >
         <div className="weather-card-header">
@@ -87,4 +86,3 @@ const WeatherCard = ({ city }) => {
 };
 
 export default WeatherCard;
-

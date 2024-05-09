@@ -14,7 +14,7 @@ const WeatherDetail = () => {
     const fetchData = async () => {
       const data = await fetchWeatherData(city);
       setWeatherData(data);
-      console.log('weather Detail', data);
+      // console.log('weather Detail', data);
     };
     fetchData();
   }, [city]);

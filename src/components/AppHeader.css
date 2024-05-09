@@ -7,12 +7,14 @@
     position: fixed;
     width: 100%;
     z-index: 1000;
+    border-bottom: 1px solid #ccc;
   }
 
   .header-menu {
      flex: 1;
      min-width: 0;
      background: #292727;
+     border-bottom: 1px solid #ccc !important;
   }
 
   .weather-app-text {

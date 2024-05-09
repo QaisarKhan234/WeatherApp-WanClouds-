@@ -1,9 +1,8 @@
 /* WeatherForm.css */
 .weather-form {
     padding: 20px;
-    margin-bottom: 80px;
+    margin-bottom: 138px;
   }
-  
   .weather-form-card {
     background: #444;
     color: #fff;
@@ -19,8 +18,7 @@
   
   .weather-data-section {
     display: flex;
-    align-items: center;
-    
+    align-items: center; 
   }
   
   .weather-data-icon {
@@ -55,11 +53,5 @@
     border-color: #ccc;
 }
 
-.alert{
-  position: absolute;
-  top: 74px;
-  right: 0;
-  z-index: 999;
-  width: 300px;
-}
+
  
